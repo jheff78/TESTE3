@@ -1,0 +1,29 @@
+from datetime import datetime
+
+# Função para calcular a idade
+def calcular_idade(ano_nascimento):
+    ano_atual = 2022
+    return ano_atual - ano_nascimento
+
+# Função para obter o ano de nascimento válido
+def obter_ano_nascimento():
+    while True:
+        try:
+            ano_nascimento = int(input("Digite o ano de nascimento (entre 1922 e 2021): "))
+            if 1922 <= ano_nascimento <= 2021:
+                return ano_nascimento
+            else:
+                print("Ano inválido. Por favor, insira um ano entre 1922 e 2021.")
+        except ValueError:
+            print("Entrada inválida. Por favor, insira um número válido.")
+
+# Função principal
+def main():
+    nome = input("Digite seu nome completo: ")
+    ano_nascimento = obter_ano_nascimento()
+    idade = calcular_idade(ano_nascimento)
+    
+    print(f"{nome}, você completou ou completará {idade} anos em 2022.")
+
+# Executa o programa
+main()
